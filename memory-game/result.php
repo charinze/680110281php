@@ -31,7 +31,7 @@ $player_name = $_SESSION['player_name'] ?? 'ผู้เล่น';
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #FFFFE8;
-            color: white;
+            color: #694E4E;
             min-height: 100vh;
             padding: 30px 20px;
         }
@@ -96,13 +96,13 @@ $player_name = $_SESSION['player_name'] ?? 'ผู้เล่น';
 
         th { color: #694E4E; font-size: 13px; }
 
-        tbody tr:nth-child(even) { background-color: #1a2a50; }
-        tbody tr:hover { background-color: #243460; }
+        tbody tr:nth-child(even) { background-color: #CDE990; }
+        tbody tr:hover { background-color: #E0F9B5; }
 
         /* อันดับพิเศษ */
         .rank-1 { color: #FFD700; font-size: 18px; }
         .rank-2 { color: #C0C0C0; font-size: 17px; }
-        .rank-3 { color: #CD7F32; font-size: 17px; }
+        .rank-3 { color: #cc7f33; font-size: 17px; }
 
         .empty {
             text-align: center;
@@ -152,7 +152,14 @@ $player_name = $_SESSION['player_name'] ?? 'ผู้เล่น';
         <tbody>
             <?php foreach ($easy_board as $i => $row): ?>
             <tr>
-                <td class="rank-<?= $i+1 ?>"><?= $i === 0 ? '🥇' : ($i === 1 ? '🥈' : ($i === 2 ? '🥉' : $i+1)) ?></td>
+                <td class="rank-<?= $i+1 ?>">
+                    <?php
+                    if ($i === 0)      echo '🥇 1';
+                    elseif ($i === 1)  echo '🥈 2';
+                    elseif ($i === 2)  echo '🥉 3';
+                    else               echo $i+1;
+                    ?>
+                </td>
                 <td><?= htmlspecialchars($row['player_name']) ?></td>
                 <td><?= $row['time_taken'] ?></td>
                 <td><?= $row['moves'] ?></td>
@@ -175,7 +182,14 @@ $player_name = $_SESSION['player_name'] ?? 'ผู้เล่น';
         <tbody>
             <?php foreach ($medium_board as $i => $row): ?>
             <tr>
-                <td><?= $i === 0 ? '🥇' : ($i === 1 ? '🥈' : ($i === 2 ? '🥉' : $i+1)) ?></td>
+                <td class="rank-<?= $i+1 ?>">
+                    <?php
+                    if ($i === 0)      echo '🥇 1';
+                    elseif ($i === 1)  echo '🥈 2';
+                    elseif ($i === 2)  echo '🥉 3';
+                    else               echo $i+1;
+                    ?>
+                </td>
                 <td><?= htmlspecialchars($row['player_name']) ?></td>
                 <td><?= $row['time_taken'] ?></td>
                 <td><?= $row['moves'] ?></td>
@@ -198,7 +212,15 @@ $player_name = $_SESSION['player_name'] ?? 'ผู้เล่น';
         <tbody>
             <?php foreach ($hard_board as $i => $row): ?>
             <tr>
-                <td><?= $i === 0 ? '🥇' : ($i === 1 ? '🥈' : ($i === 2 ? '🥉' : $i+1)) ?></td>
+               
+                <td class="rank-<?= $i+1 ?>">
+                    <?php
+                    if ($i === 0)      echo '🥇 1';
+                    elseif ($i === 1)  echo '🥈 2';
+                    elseif ($i === 2)  echo '🥉 3';
+                    else               echo $i+1;
+                    ?>
+                </td>
                 <td><?= htmlspecialchars($row['player_name']) ?></td>
                 <td><?= $row['time_taken'] ?></td>
                 <td><?= $row['moves'] ?></td>

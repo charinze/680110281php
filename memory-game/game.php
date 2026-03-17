@@ -28,11 +28,11 @@ $easy_cards = [
 // Medium: จับคู่ ภาพสัตว์ ↔ ชื่อภาษาไทย (6 คู่ = 12 ใบ)
 $medium_cards = [
     ['id' => 'cat', 'emoji' => '<img src="images/cat1.jpg" width="140" height="140" style="border-radius:8px;object-fit:cover;">', 'name' => 'แมว'],
-    ['id' => 'dog',      'emoji' => '🐶', 'name' => 'หมา'],
-    ['id' => 'rabbit',   'emoji' => '🐰', 'name' => 'กระต่าย'],
-    ['id' => 'bear',     'emoji' => '🐻', 'name' => 'หมี'],
-    ['id' => 'panda',    'emoji' => '🐼', 'name' => 'แพนด้า'],
-    ['id' => 'elephant', 'emoji' => '🐘', 'name' => 'ช้าง'],
+    ['id' => 'dog',      'emoji' => '<img src="images/dog1.jpg" width="140" height="140" style="border-radius:8px;object-fit:cover;">', 'name' => 'หมา'],
+    ['id' => 'rabbit',   'emoji' => '<img src="images/rabbit1.png" width="140" height="140" style="border-radius:8px;object-fit:cover;">', 'name' => 'กระต่าย'],
+    ['id' => 'bear',     'emoji' => '<img src="images/bear1.webp" width="140" height="140" style="border-radius:8px;object-fit:cover;">', 'name' => 'หมี'],
+    ['id' => 'panda',    'emoji' => '<img src="images/panda1.webp" width="140" height="140" style="border-radius:8px;object-fit:cover;">', 'name' => 'แพนด้า'],
+    ['id' => 'elephant', 'emoji' => '<img src="images/ele1.jpg" width="140" height="140" style="border-radius:8px;object-fit:cover;">', 'name' => 'ช้าง'],
 ];
 
 // Hard: จับคู่ ธงชาติ ↔ ชื่อประเทศ (10 คู่ = 20 ใบ)
@@ -365,7 +365,7 @@ function startTimer() {
         document.getElementById('timer').textContent = timerValue;
 
         // เปลี่ยนสีเมื่อเวลาน้อย
-        if (timerValue <= 10) {
+        if (timerValue <= 20) {
             document.getElementById('timer').style.color = '#8E0505';
         }
 
